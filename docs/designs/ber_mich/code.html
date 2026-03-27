@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#dbdad7",
+              "secondary": "#5f5e5e",
+              "surface-bright": "#faf9f6",
+              "tertiary-fixed-dim": "#e3c290",
+              "tertiary": "#71582f",
+              "surface-variant": "#e3e2e0",
+              "on-tertiary-fixed-variant": "#59431c",
+              "primary-container": "#956c4d",
+              "error": "#ba1a1a",
+              "inverse-on-surface": "#f2f1ee",
+              "surface-container": "#efeeeb",
+              "on-secondary-fixed-variant": "#474747",
+              "surface-container-high": "#e9e8e5",
+              "tertiary-container": "#8b7045",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f4f3f1",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#efbc98",
+              "primary-fixed-dim": "#efbc98",
+              "on-surface-variant": "#50443d",
+              "on-primary": "#ffffff",
+              "on-background": "#1a1c1a",
+              "on-primary-container": "#fffbff",
+              "background": "#faf9f6",
+              "primary": "#795437",
+              "surface-container-highest": "#e3e2e0",
+              "outline-variant": "#d4c3b9",
+              "on-surface": "#1a1c1a",
+              "error-container": "#ffdad6",
+              "on-primary-fixed": "#2f1501",
+              "on-secondary-container": "#656464",
+              "primary-fixed": "#ffdcc4",
+              "outline": "#82746c",
+              "on-primary-fixed-variant": "#613f24",
+              "on-tertiary": "#ffffff",
+              "surface": "#faf9f6",
+              "tertiary-fixed": "#ffdeac",
+              "secondary-container": "#e4e2e1",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#fffbff",
+              "secondary-fixed": "#e4e2e1",
+              "on-tertiary-fixed": "#281900",
+              "inverse-surface": "#2f312f",
+              "secondary-fixed-dim": "#c8c6c6",
+              "surface-tint": "#7c5639",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#1b1c1c"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Noto Serif"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Noto Serif', serif; scroll-behavior: smooth; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary/20">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto bg-[#faf9f6]/80 dark:bg-[#1a1c1a]/80 backdrop-blur-md">
+<div class="font-serif italic text-2xl text-[#1a1c1a] dark:text-[#faf9f6]">The Breath of Silence</div>
+<div class="hidden md:flex gap-12 items-center font-serif tracking-wide text-lg">
+<a class="text-[#1a1c1a] dark:text-[#faf9f6] opacity-70 hover:opacity-100 hover:text-[#795437] transition-all duration-300" href="#">Start</a>
+<a class="text-[#1a1c1a] dark:text-[#faf9f6] opacity-70 hover:opacity-100 hover:text-[#795437] transition-all duration-300" href="#">Offenes Treffen</a>
+<a class="text-[#1a1c1a] dark:text-[#faf9f6] opacity-70 hover:opacity-100 hover:text-[#795437] transition-all duration-300" href="#">Begleitgespräch</a>
+<a class="text-[#795437] dark:text-[#956c4d] font-bold border-b-2 border-[#795437] pb-1 hover:opacity-100 transition-all duration-300" href="#">Über mich</a>
+<a class="text-[#1a1c1a] dark:text-[#faf9f6] opacity-70 hover:opacity-100 hover:text-[#795437] transition-all duration-300" href="#">Kontakt</a>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section: The Encounter -->
+<section class="max-w-screen-xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+<!-- Minimalist Portrait -->
+<div class="lg:col-span-5 flex flex-col items-center lg:items-start">
+<div class="w-full aspect-[3/4] overflow-hidden grayscale contrast-125 transition-all duration-700 hover:grayscale-0">
+<img class="w-full h-full object-cover" data-alt="Minimalist black and white portrait of a spiritual guide, serene expression, soft side lighting, focused on eyes, textured background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR8pLboqFhgr8QiAK8o3ERFNLqB8ytll8GOX6e-lmlFKlP9l4PlvYMaf-2UIVg8QlBWByk5w7_1LDShOukCOMqDviTI5zsfl8uw3Go7qB7eD9BMS9eIWLd8TxdTHtzSafop_O5hL-AMg35IK2ZXvNf2kPy3pGcyvjsXk2zJisSzQUpGSTm6ZCSPKa1brR1oPIcf6ONNoqmFb-iIfRIpt_WseTzyCsF971FIlWYt0huqBV-Jq9QzNZ4fx3c_gvupuGR1SnYjKog66Q"/>
+</div>
+<div class="mt-8">
+<p class="font-label text-xs tracking-[0.2em] text-primary uppercase">Präsenz &amp; Stille</p>
+</div>
+</div>
+<!-- Biography Content -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<header class="mb-16">
+<h1 class="font-headline text-5xl md:text-7xl tracking-tight text-on-surface leading-[1.1]">
+                        Der Raum zwischen den <span class="italic">Worten</span>.
+                    </h1>
+</header>
+<div class="space-y-12 max-w-2xl text-lg md:text-xl leading-relaxed font-body text-on-surface/90">
+<p>
+                        Mein Weg begann nicht in der Stille, sondern im Lärm. Über zwei Jahrzehnte verbrachte ich in der Dynamik des modernen Lebens, bis ich erkannte, dass die Antworten, die ich suchte, nicht durch mehr Handeln, sondern durch weniger Werden zu finden sind.
+                    </p>
+<p>
+                        In der Einfachheit des Atems und der bewussten Präsenz fand ich eine Form der Führung, die nichts hinzufügen möchte, sondern das Bestehende freilegt. Meine Philosophie gründet auf der Überzeugung, dass jeder Mensch einen unberührten Kern der Ruhe besitzt, der lediglich durch den Staub des Alltags verdeckt wird.
+                    </p>
+<p>
+                        Heute begleite ich Menschen dabei, diesen inneren Ankerpunkt wiederzufinden. Es ist kein Lehren im klassischen Sinne, sondern ein gemeinsames Aushalten und Erkunden der Stille. Ein Raum, in dem das Wesentliche atmen kann.
+                    </p>
+</div>
+<!-- Subtle CTA / Tertiary Link -->
+<div class="mt-20">
+<a class="group inline-flex items-center gap-4 text-primary font-body text-lg italic transition-all duration-300" href="#">
+                        Das Begleitgespräch entdecken
+                        <span class="block h-[1px] w-12 bg-primary/40 group-hover:w-20 transition-all duration-500"></span>
+</a>
+</div>
+</div>
+</section>
+<!-- "Pause" Block: Visual Breath -->
+<section class="mt-40 w-full py-48 bg-surface-container-low flex items-center justify-center px-6">
+<div class="max-w-4xl text-center">
+<blockquote class="font-headline text-3xl md:text-5xl italic text-on-surface leading-tight">
+                    "Stille ist nicht die Abwesenheit von Geräuschen, sondern die Abwesenheit von Widerstand."
+                </blockquote>
+</div>
+</section>
+<!-- Values Section: Tonal Layering -->
+<section class="max-w-screen-xl mx-auto px-6 md:px-12 py-40 grid grid-cols-1 md:grid-cols-3 gap-20">
+<div class="space-y-6">
+<h3 class="font-headline text-2xl italic">Einfachheit</h3>
+<p class="font-body text-secondary leading-relaxed">
+                    Wir reduzieren die Komplexität des Geistes auf die Klarheit des Augenblicks. Keine Dogmen, nur Erfahrung.
+                </p>
+</div>
+<div class="space-y-6">
+<h3 class="font-headline text-2xl italic">Präsenz</h3>
+<p class="font-body text-secondary leading-relaxed">
+                    Vollständige Aufmerksamkeit für das, was ist. Ohne Urteil, ohne den Drang, etwas verändern zu müssen.
+                </p>
+</div>
+<div class="space-y-6">
+<h3 class="font-headline text-2xl italic">Tiefe</h3>
+<p class="font-body text-secondary leading-relaxed">
+                    Wir gehen über die Oberfläche hinaus, dorthin, wo die wahre Ruhe des Seins zu Hause ist.
+                </p>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-16 px-12 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#f4f3f1] dark:bg-[#121412] mt-20">
+<div class="font-serif text-xl text-[#1a1c1a] dark:text-[#faf9f6]">The Breath of Silence</div>
+<div class="flex flex-wrap justify-center gap-8 font-serif text-sm tracking-tight text-[#1a1c1a] dark:text-[#faf9f6]">
+<a class="opacity-60 hover:opacity-100 hover:underline transition-opacity" href="#">Newsletter</a>
+<a class="opacity-60 hover:opacity-100 hover:underline transition-opacity" href="#">Instagram</a>
+<a class="opacity-60 hover:opacity-100 hover:underline transition-opacity" href="#">Email</a>
+<a class="opacity-60 hover:opacity-100 hover:underline transition-opacity" href="#">Privacy Policy</a>
+</div>
+<div class="font-serif text-sm tracking-tight text-[#1a1c1a] dark:text-[#faf9f6] opacity-60">
+            © 2024 The Breath of Silence. All rights reserved.
+        </div>
+</footer>
+</body></html>

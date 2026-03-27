@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#dbdad7",
+              "secondary": "#5f5e5e",
+              "surface-bright": "#faf9f6",
+              "tertiary-fixed-dim": "#e3c290",
+              "tertiary": "#71582f",
+              "surface-variant": "#e3e2e0",
+              "on-tertiary-fixed-variant": "#59431c",
+              "primary-container": "#956c4d",
+              "error": "#ba1a1a",
+              "inverse-on-surface": "#f2f1ee",
+              "surface-container": "#efeeeb",
+              "on-secondary-fixed-variant": "#474747",
+              "surface-container-high": "#e9e8e5",
+              "tertiary-container": "#8b7045",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f4f3f1",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#efbc98",
+              "primary-fixed-dim": "#efbc98",
+              "on-surface-variant": "#50443d",
+              "on-primary": "#ffffff",
+              "on-background": "#1a1c1a",
+              "on-primary-container": "#fffbff",
+              "background": "#faf9f6",
+              "primary": "#795437",
+              "surface-container-highest": "#e3e2e0",
+              "outline-variant": "#d4c3b9",
+              "on-surface": "#1a1c1a",
+              "error-container": "#ffdad6",
+              "on-primary-fixed": "#2f1501",
+              "on-secondary-container": "#656464",
+              "primary-fixed": "#ffdcc4",
+              "outline": "#82746c",
+              "on-primary-fixed-variant": "#613f24",
+              "on-tertiary": "#ffffff",
+              "surface": "#faf9f6",
+              "tertiary-fixed": "#ffdeac",
+              "secondary-container": "#e4e2e1",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#fffbff",
+              "secondary-fixed": "#e4e2e1",
+              "on-tertiary-fixed": "#281900",
+              "inverse-surface": "#2f312f",
+              "secondary-fixed-dim": "#c8c6c6",
+              "surface-tint": "#7c5639",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#1b1c1c"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Noto Serif"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto bg-[#faf9f6]/80 backdrop-blur-md">
+<div class="font-serif italic text-2xl text-[#1a1c1a]">The Breath of Silence</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-serif tracking-wide text-lg text-[#1a1c1a] opacity-70 hover:opacity-100 hover:text-[#795437] transition-all duration-300" href="#">Start</a>
+<a class="font-serif tracking-wide text-lg text-[#1a1c1a] opacity-70 hover:opacity-100 hover:text-[#795437] transition-all duration-300" href="#">Offenes Treffen</a>
+<a class="font-serif tracking-wide text-lg text-[#795437] font-bold border-b-2 border-[#795437] pb-1" href="#">Begleitgespräch</a>
+<a class="font-serif tracking-wide text-lg text-[#1a1c1a] opacity-70 hover:opacity-100 hover:text-[#795437] transition-all duration-300" href="#">Über mich</a>
+<a class="font-serif tracking-wide text-lg text-[#1a1c1a] opacity-70 hover:opacity-100 hover:text-[#795437] transition-all duration-300" href="#">Kontakt</a>
+</div>
+<button class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<main class="pt-32 min-h-screen">
+<!-- Hero Section: Intentional Asymmetry -->
+<section class="max-w-7xl mx-auto px-12 py-24 flex flex-col md:flex-row items-start gap-20">
+<div class="md:w-3/5">
+<h1 class="font-headline text-5xl md:text-7xl tracking-tight leading-tight mb-12">
+                    Begleitgespräch
+                </h1>
+<p class="font-body text-xl md:text-2xl leading-relaxed text-secondary max-w-2xl">
+                    Ein Raum für das, was im Alltag oft ungehört bleibt. In der Stille und im achtsamen Dialog begleite ich dich auf deinem Weg zu innerer Klarheit. Ohne Urteil, ohne Eile.
+                </p>
+</div>
+<div class="md:w-2/5 mt-12 md:mt-24">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative">
+<img alt="Contemplative scene" class="w-full h-full object-cover opacity-90 grayscale-[20%]" data-alt="close-up of a single ceramic bowl sitting on a rough wooden table in a room with soft natural morning light and shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR-wAuk_3bN0m2CHCkkzyMAz74lqnfMk6HYnMIRW4H7I3gItG8dZcK9AwSe_l0VdTKQNVEWQX5er5wfO6Xv3v5nClt4HhrwigEfMm5BSEYWGMQ0PIsWJF8Y2ew0POnM_QQIhXV-TS8LuUTgjbL-I7kZTXJBR0bCe_ZFlO8R9FWx9QcPeWUztWZo7-SoD02bUw557bplNvqlxhxnpDDUb4zUELSEqQv_783zs1HZ2ArKpVCAMGNenegWtBwpYwBy-uSg5d_EfXCtjE"/>
+</div>
+</div>
+</section>
+<!-- "Pause" Block: Visual Breath -->
+<section class="w-full bg-surface-container-highest py-32 px-12 my-24">
+<div class="max-w-4xl mx-auto text-center">
+<blockquote class="font-headline text-3xl md:text-4xl italic leading-snug">
+                    "Die Stille ist nicht leer. Sie ist voller Antworten."
+                </blockquote>
+</div>
+</section>
+<!-- Session Content & Booking: Minimalist Editorial Layout -->
+<section class="max-w-7xl mx-auto px-12 py-24 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 space-y-12">
+<div class="space-y-6">
+<h2 class="font-headline text-3xl">Das Angebot</h2>
+<div class="w-12 h-px bg-primary opacity-30"></div>
+</div>
+<div class="space-y-8 text-lg leading-relaxed text-on-surface">
+<p>
+                        Ein Begleitgespräch dauert in der Regel 60 Minuten. Es ist eine Einladung, innezuhalten und den eigenen Impulsen Raum zu geben. Wir finden gemeinsam heraus, wo deine Aufmerksamkeit gerade verweilen möchte.
+                    </p>
+<p>
+                        Diese Einzelsitzungen finden wahlweise in meinem ruhigen Praxisraum oder bei einem gemeinsamen Spaziergang in der Natur statt. Die Präsenz des Augenblicks ist unser Kompass.
+                    </p>
+</div>
+</div>
+<div class="md:col-start-9 md:col-span-4 bg-surface-container-low p-12 flex flex-col items-center text-center">
+<span class="font-label uppercase tracking-widest text-xs text-secondary mb-4">Einzelsitzung</span>
+<div class="font-headline text-5xl mb-2">80 €</div>
+<p class="font-label text-sm text-secondary mb-10">pro 60 Minuten</p>
+<a class="inline-block w-full py-4 bg-primary text-on-primary font-label font-medium tracking-wide uppercase text-sm hover:bg-primary-container transition-colors duration-300 text-center" href="#">
+                    Termin anfragen
+                </a>
+<p class="mt-8 font-body italic text-sm text-secondary opacity-70">
+                    Ermäßigung auf Anfrage möglich.
+                </p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-12 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#f4f3f1] mt-20">
+<div class="flex flex-col gap-2">
+<div class="font-serif text-xl text-[#1a1c1a]">The Breath of Silence</div>
+<p class="font-serif text-sm tracking-tight text-[#1a1c1a] opacity-60">© 2024 The Breath of Silence. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-serif text-sm tracking-tight text-[#1a1c1a] opacity-60 hover:opacity-100 hover:underline transition-opacity" href="#">Newsletter</a>
+<a class="font-serif text-sm tracking-tight text-[#1a1c1a] opacity-60 hover:opacity-100 hover:underline transition-opacity" href="#">Instagram</a>
+<a class="font-serif text-sm tracking-tight text-[#1a1c1a] opacity-60 hover:opacity-100 hover:underline transition-opacity" href="#">Email</a>
+<a class="font-serif text-sm tracking-tight text-[#1a1c1a] opacity-60 hover:opacity-100 hover:underline transition-opacity" href="#">Privacy Policy</a>
+</div>
+</footer>
+</body></html>

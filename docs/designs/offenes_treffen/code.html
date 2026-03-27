@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#dbdad7",
+              "secondary": "#5f5e5e",
+              "surface-bright": "#faf9f6",
+              "tertiary-fixed-dim": "#e3c290",
+              "tertiary": "#71582f",
+              "surface-variant": "#e3e2e0",
+              "on-tertiary-fixed-variant": "#59431c",
+              "primary-container": "#956c4d",
+              "error": "#ba1a1a",
+              "inverse-on-surface": "#f2f1ee",
+              "surface-container": "#efeeeb",
+              "on-secondary-fixed-variant": "#474747",
+              "surface-container-high": "#e9e8e5",
+              "tertiary-container": "#8b7045",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f4f3f1",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#efbc98",
+              "primary-fixed-dim": "#efbc98",
+              "on-surface-variant": "#50443d",
+              "on-primary": "#ffffff",
+              "on-background": "#1a1c1a",
+              "on-primary-container": "#fffbff",
+              "background": "#faf9f6",
+              "primary": "#795437",
+              "surface-container-highest": "#e3e2e0",
+              "outline-variant": "#d4c3b9",
+              "on-surface": "#1a1c1a",
+              "error-container": "#ffdad6",
+              "on-primary-fixed": "#2f1501",
+              "on-secondary-container": "#656464",
+              "primary-fixed": "#ffdcc4",
+              "outline": "#82746c",
+              "on-primary-fixed-variant": "#613f24",
+              "on-tertiary": "#ffffff",
+              "surface": "#faf9f6",
+              "tertiary-fixed": "#ffdeac",
+              "secondary-container": "#e4e2e1",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#fffbff",
+              "secondary-fixed": "#e4e2e1",
+              "on-tertiary-fixed": "#281900",
+              "inverse-surface": "#2f312f",
+              "secondary-fixed-dim": "#c8c6c6",
+              "surface-tint": "#7c5639",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#1b1c1c"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Noto Serif"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary/20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto bg-[#faf9f6]/80 dark:bg-[#1a1c1a]/80 backdrop-blur-md">
+<div class="font-serif italic text-2xl text-[#1a1c1a] dark:text-[#faf9f6]">The Breath of Silence</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="font-serif tracking-wide text-lg text-[#1a1c1a] dark:text-[#faf9f6] opacity-70 hover:opacity-100 hover:text-[#795437] transition-all duration-300" href="#">Start</a>
+<a class="font-serif tracking-wide text-lg text-[#795437] dark:text-[#956c4d] font-bold border-b-2 border-[#795437] pb-1" href="#">Offenes Treffen</a>
+<a class="font-serif tracking-wide text-lg text-[#1a1c1a] dark:text-[#faf9f6] opacity-70 hover:opacity-100 hover:text-[#795437] transition-all duration-300" href="#">Begleitgespräch</a>
+<a class="font-serif tracking-wide text-lg text-[#1a1c1a] dark:text-[#faf9f6] opacity-70 hover:opacity-100 hover:text-[#795437] transition-all duration-300" href="#">Über mich</a>
+<a class="font-serif tracking-wide text-lg text-[#1a1c1a] dark:text-[#faf9f6] opacity-70 hover:opacity-100 hover:text-[#795437] transition-all duration-300" href="#">Kontakt</a>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 md:px-12 max-w-screen-xl mx-auto">
+<!-- Hero / Description -->
+<section class="mb-32">
+<div class="max-w-3xl">
+<span class="font-label text-sm uppercase tracking-[0.2em] text-primary mb-6 block">Begegnung in der Stille</span>
+<h1 class="text-5xl md:text-6xl font-headline leading-tight mb-12">Offenes Treffen</h1>
+<p class="text-xl md:text-2xl leading-relaxed text-secondary font-body">
+                    Ein Raum ohne Agenda. Wir kommen zusammen, um gemeinsam in der Stille zu verweilen. Es gibt nichts zu erreichen, keine Technik zu meistern. In der Präsenz der Gruppe finden wir oft leichter den Zugang zu jener Ruhe, die unter den Wellen des Alltags stets vorhanden ist.
+                </p>
+<p class="mt-8 text-lg text-secondary/80 font-body max-w-2xl italic">
+                    Nach der gemeinsamen Stille besteht die Möglichkeit für einen kurzen Austausch oder Fragen zur kontemplativen Praxis.
+                </p>
+</div>
+</section>
+<!-- Image Break - Asymmetric Layout -->
+<section class="mb-32 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<div class="md:col-span-7 h-[500px] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition-all duration-700" data-alt="Minimalist interior of a quiet meditation room with soft morning light streaming through a large window onto wooden floors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrx9bH8lXRnIhQYAD57yTcEZ-qh06YTb4ru0YvhSKVpU60gmBlnM2ujXQwUBHAwdyE77jm-t4QvR51ucPqqcyQOur1UOR0BSn7-yW2Zs8J9qD7l627tKns59nDea_x_pzbWPeLiJBWGIJQVDVciXr_hOawUmPIJSVyR3xhHBJQerqtSMnTA3dwwUaI1P1MW3dWi4pxBiB_4UbgVN20KTaZMtvOy0jn-B4zhVRsUbbXT9N_kpvL2ib-cQoGtpVeaU1QfHYm-d8NZgY"/>
+</div>
+<div class="md:col-span-4 md:col-start-9">
+<blockquote class="text-3xl font-headline italic leading-snug border-l-2 border-primary/30 pl-8 py-4">
+                    "Die Stille ist nicht die Abwesenheit von Geräuschen, sondern die Anwesenheit von Frieden."
+                </blockquote>
+</div>
+</section>
+<!-- Dates Section -->
+<section class="space-y-24">
+<div class="flex flex-col md:flex-row md:items-baseline justify-between gap-4 border-b border-outline-variant/20 pb-4">
+<h2 class="text-4xl font-headline">Kommende Termine</h2>
+<p class="font-label text-sm text-secondary tracking-wider uppercase">Aktualisiert am 12. Mai 2024</p>
+</div>
+<!-- Online -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-3">
+<h3 class="text-2xl font-headline sticky top-32">Online</h3>
+<p class="font-label text-xs text-secondary mt-2">Via Zoom Konferenz</p>
+</div>
+<div class="md:col-span-9 space-y-1">
+<!-- Date Row -->
+<div class="group flex flex-col md:flex-row md:items-center justify-between py-10 px-6 transition-colors duration-300 hover:bg-surface-container-low border-b border-outline-variant/10">
+<div class="flex items-center gap-12">
+<div class="text-center w-16">
+<span class="block text-sm font-label text-secondary uppercase tracking-tighter">Juni</span>
+<span class="block text-3xl font-headline">04.</span>
+</div>
+<div>
+<h4 class="text-xl font-headline">Dienstag Abend</h4>
+<p class="text-secondary font-body">19:30 — 21:00 Uhr</p>
+</div>
+</div>
+<div class="mt-6 md:mt-0">
+<a class="inline-flex items-center gap-2 px-8 py-3 bg-primary text-on-primary text-sm font-label uppercase tracking-widest hover:bg-primary-container transition-colors duration-300" href="#">
+                                Platz Reservieren
+                            </a>
+</div>
+</div>
+<!-- Date Row -->
+<div class="group flex flex-col md:flex-row md:items-center justify-between py-10 px-6 transition-colors duration-300 hover:bg-surface-container-low border-b border-outline-variant/10">
+<div class="flex items-center gap-12">
+<div class="text-center w-16">
+<span class="block text-sm font-label text-secondary uppercase tracking-tighter">Juni</span>
+<span class="block text-3xl font-headline">18.</span>
+</div>
+<div>
+<h4 class="text-xl font-headline">Dienstag Abend</h4>
+<p class="text-secondary font-body">19:30 — 21:00 Uhr</p>
+</div>
+</div>
+<div class="mt-6 md:mt-0">
+<a class="inline-flex items-center gap-2 px-8 py-3 bg-primary text-on-primary text-sm font-label uppercase tracking-widest hover:bg-primary-container transition-colors duration-300" href="#">
+                                Platz Reservieren
+                            </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Berlin -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-3">
+<h3 class="text-2xl font-headline sticky top-32">Berlin</h3>
+<p class="font-label text-xs text-secondary mt-2">Prenzlauer Berg, Stille-Zentrum</p>
+</div>
+<div class="md:col-span-9 space-y-1">
+<div class="group flex flex-col md:flex-row md:items-center justify-between py-10 px-6 transition-colors duration-300 hover:bg-surface-container-low border-b border-outline-variant/10">
+<div class="flex items-center gap-12">
+<div class="text-center w-16">
+<span class="block text-sm font-label text-secondary uppercase tracking-tighter">Juni</span>
+<span class="block text-3xl font-headline">12.</span>
+</div>
+<div>
+<h4 class="text-xl font-headline">Mittwoch Vormittag</h4>
+<p class="text-secondary font-body">10:00 — 11:30 Uhr</p>
+</div>
+</div>
+<div class="mt-6 md:mt-0">
+<a class="inline-flex items-center gap-2 px-8 py-3 bg-primary text-on-primary text-sm font-label uppercase tracking-widest hover:bg-primary-container transition-colors duration-300" href="#">
+                                Anmelden
+                            </a>
+</div>
+</div>
+</div>
+</div>
+<!-- München -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-3">
+<h3 class="text-2xl font-headline sticky top-32">München</h3>
+<p class="font-label text-xs text-secondary mt-2">Zentrum für Kontemplation</p>
+</div>
+<div class="md:col-span-9 space-y-1">
+<div class="group flex flex-col md:flex-row md:items-center justify-between py-10 px-6 transition-colors duration-300 hover:bg-surface-container-low border-b border-outline-variant/10">
+<div class="flex items-center gap-12">
+<div class="text-center w-16">
+<span class="block text-sm font-label text-secondary uppercase tracking-tighter">Juli</span>
+<span class="block text-3xl font-headline">05.</span>
+</div>
+<div>
+<h4 class="text-xl font-headline">Freitag Abend</h4>
+<p class="text-secondary font-body">18:00 — 20:00 Uhr</p>
+</div>
+</div>
+<div class="mt-6 md:mt-0">
+<span class="text-error font-label uppercase text-xs tracking-widest">Ausgebucht</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Information / FAQ Style -->
+<section class="mt-40 grid grid-cols-1 md:grid-cols-2 gap-20">
+<div>
+<h3 class="font-headline text-2xl mb-6">Hinweise zur Teilnahme</h3>
+<ul class="space-y-6 font-body text-secondary leading-relaxed">
+<li class="flex gap-4">
+<span class="text-primary mt-1 material-symbols-outlined" data-icon="schedule">schedule</span>
+<span>Bitte finden Sie sich 10 Minuten vor Beginn ein, um in Ruhe anzukommen. Die Türen werden pünktlich geschlossen.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-primary mt-1 material-symbols-outlined" data-icon="payments">payments</span>
+<span>Die Teilnahme erfolgt auf Spendenbasis (Dana-Prinzip). Richtwert für Präsenztermine: 15–20 €.</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-low p-12">
+<h3 class="font-headline text-2xl mb-6">Privates Gespräch?</h3>
+<p class="font-body text-secondary mb-8 leading-relaxed">
+                    Sollten Sie das Bedürfnis haben, tiefergehende persönliche Themen in einem geschützten Einzelrahmen zu besprechen, lade ich Sie zu einem Begleitgespräch ein.
+                </p>
+<a class="text-primary font-headline italic text-lg border-b border-primary hover:border-b-2 transition-all" href="#">
+                    Mehr über Begleitgespräche erfahren
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-12 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#f4f3f1] dark:bg-[#121412] mt-20">
+<div class="font-serif text-xl text-[#1a1c1a] dark:text-[#faf9f6]">The Breath of Silence</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-serif text-sm tracking-tight text-[#1a1c1a] dark:text-[#faf9f6] opacity-60 hover:opacity-100 hover:underline transition-opacity" href="#">Newsletter</a>
+<a class="font-serif text-sm tracking-tight text-[#1a1c1a] dark:text-[#faf9f6] opacity-60 hover:opacity-100 hover:underline transition-opacity" href="#">Instagram</a>
+<a class="font-serif text-sm tracking-tight text-[#1a1c1a] dark:text-[#faf9f6] opacity-60 hover:opacity-100 hover:underline transition-opacity" href="#">Email</a>
+<a class="font-serif text-sm tracking-tight text-[#1a1c1a] dark:text-[#faf9f6] opacity-60 hover:opacity-100 hover:underline transition-opacity" href="#">Privacy Policy</a>
+</div>
+<div class="font-serif text-sm tracking-tight text-[#1a1c1a]/40">© 2024 The Breath of Silence. All rights reserved.</div>
+</footer>
+</body></html>
