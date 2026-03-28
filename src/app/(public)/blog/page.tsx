@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import BlogCard from "@/components/BlogCard";
 import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
   title: "Blog – Wojtek Gorecki",
@@ -41,35 +42,42 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     <>
       <section className="py-28 md:py-36">
         <div className="mx-auto max-w-5xl px-6 md:px-12">
-          <p className="font-label text-[0.7rem] font-medium uppercase tracking-[0.25em] text-primary">
-            Blog
-          </p>
-          <h1 className="mt-5 font-headline text-[2.75rem] text-on-surface md:text-[4.75rem]">
-            Gedanken &amp; Impulse
-          </h1>
+          <FadeIn direction="none" delay={100}>
+            <p className="font-label text-[0.7rem] font-medium uppercase tracking-[0.25em] text-primary">
+              Blog
+            </p>
+          </FadeIn>
+          <FadeIn direction="none" delay={200}>
+            <h1 className="mt-5 font-headline text-[2.75rem] text-on-surface md:text-[4.75rem]">
+              Gedanken &amp; Impulse
+            </h1>
+          </FadeIn>
 
           {posts.length === 0 ? (
-            <div className="mt-20 text-center">
-              <div className="mx-auto mb-8 h-px w-16 bg-primary/20" />
-              <p className="font-body text-lg font-medium text-on-surface/40">
-                Noch keine Beiträge vorhanden.
-              </p>
-              <p className="mt-3 font-body text-[0.85rem] font-medium text-on-surface/30">
-                Bald erscheinen hier Texte über Stille, Präsenz und das, was ist.
-              </p>
-            </div>
+            <FadeIn delay={350}>
+              <div className="mt-20 text-center">
+                <div className="mx-auto mb-8 h-px w-16 bg-primary/20" />
+                <p className="font-body text-lg font-medium text-on-surface/40">
+                  Noch keine Beiträge vorhanden.
+                </p>
+                <p className="mt-3 font-body text-[0.85rem] font-medium text-on-surface/30">
+                  Bald erscheinen hier Texte über Stille, Präsenz und das, was ist.
+                </p>
+              </div>
+            </FadeIn>
           ) : (
             <>
               <div className="mt-16 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-                {posts.map((post) => (
-                  <BlogCard
-                    key={post.id}
-                    title={post.title}
-                    slug={post.slug}
-                    excerpt={post.excerpt}
-                    imageUrl={post.imageUrl}
-                    publishedAt={post.publishedAt}
-                  />
+                {posts.map((post, i) => (
+                  <FadeIn key={post.id} delay={i * 100}>
+                    <BlogCard
+                      title={post.title}
+                      slug={post.slug}
+                      excerpt={post.excerpt}
+                      imageUrl={post.imageUrl}
+                      publishedAt={post.publishedAt}
+                    />
+                  </FadeIn>
                 ))}
               </div>
 

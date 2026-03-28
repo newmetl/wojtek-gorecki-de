@@ -3,15 +3,18 @@ export const metadata = {
   description: "Impressum und Angaben gemäß § 5 TMG.",
 };
 
+import FadeIn from "@/components/FadeIn";
+
 export default function ImpressumPage() {
   return (
     <section className="py-24 md:py-32">
-      <div className="mx-auto max-w-3xl px-6 md:px-12">
-        <h1 className="font-headline text-4xl text-on-surface md:text-5xl">
-          Impressum
-        </h1>
+      <FadeIn>
+        <div className="mx-auto max-w-3xl px-6 md:px-12">
+          <h1 className="font-headline text-4xl text-on-surface md:text-5xl">
+            Impressum
+          </h1>
 
-        <div className="mt-12 space-y-10 font-body text-base leading-relaxed text-on-surface/80">
+          <div className="mt-12 space-y-10 font-body text-base leading-relaxed text-on-surface/80">
           <div>
             <h2 className="font-headline text-xl text-on-surface">
               Angaben gemäß § 5 TMG
@@ -87,6 +90,7 @@ export default function ImpressumPage() {
           </div>
         </div>
       </div>
+      </FadeIn>
     </section>
   );
 }
