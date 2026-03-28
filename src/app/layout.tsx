@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Noto_Serif, Work_Sans } from "next/font/google";
+import { EB_Garamond, Quicksand } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
-const notoSerif = Noto_Serif({
+const ebGaramond = EB_Garamond({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
-  variable: "--font-noto-serif",
+  variable: "--font-eb-garamond",
   display: "swap",
 });
 
-const workSans = Work_Sans({
+const quicksand = Quicksand({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-work-sans",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-quicksand",
   display: "swap",
 });
 
@@ -33,11 +33,11 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${notoSerif.variable} ${workSans.variable}`}
+      className={`${ebGaramond.variable} ${quicksand.variable}`}
     >
       <body className="bg-surface text-on-surface font-body antialiased">
         <Navigation />
-        <main className="min-h-screen pt-20">{children}</main>
+        <main className="min-h-screen pt-[72px]">{children}</main>
         <Footer />
       </body>
     </html>

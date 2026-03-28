@@ -4,17 +4,59 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 18px;
 }
 
 body {
-  font-family: "Noto Serif", serif;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
   background-color: #faf9f6;
   color: #1a1c1a;
+  letter-spacing: 0.01em;
 }
 
 ::selection {
   background-color: #795437;
   color: #ffffff;
+}
+
+/* Refined focus styles */
+*:focus-visible {
+  outline: 2px solid #795437;
+  outline-offset: 2px;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+/* Elegant horizontal rule */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #d4c3b9,
+    transparent
+  );
+  margin: 3rem 0;
+}
+
+/* Custom scrollbar (webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #faf9f6;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4c3b9;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #82746c;
 }
 
 .material-symbols-outlined {

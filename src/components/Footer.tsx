@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-surface-container-low">
+    <footer className="border-t border-outline-variant/20 bg-surface">
       <div className="mx-auto max-w-6xl px-6 py-16 md:px-8 md:py-24">
         <div className="grid gap-12 md:grid-cols-3">
           {/* Logo */}
@@ -15,7 +15,7 @@ export default function Footer() {
             >
               Wojtek Gorecki
             </Link>
-            <p className="mt-3 font-body text-sm text-on-surface/60">
+            <p className="mt-3 font-body text-[0.8rem] font-normal text-on-surface/40">
               Psychologische und spirituelle Beratung
             </p>
           </div>
@@ -24,7 +24,7 @@ export default function Footer() {
           <nav className="flex flex-col gap-3" aria-label="Footer-Navigation">
             <Link
               href="/blog"
-              className="font-body text-sm text-on-surface opacity-60 transition-opacity hover:opacity-100"
+              className="font-label text-[0.8rem] font-normal text-on-surface/50 transition-all duration-300 hover:text-primary"
             >
               Blog
             </Link>
@@ -32,13 +32,13 @@ export default function Footer() {
               href="https://www.facebook.com/wojtek.gorecki"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body text-sm text-on-surface opacity-60 transition-opacity hover:opacity-100"
+              className="font-label text-[0.8rem] font-normal text-on-surface/50 transition-all duration-300 hover:text-primary"
             >
               Facebook
             </a>
             <a
               href="mailto:kontakt@wojtek-gorecki.de"
-              className="font-body text-sm text-on-surface opacity-60 transition-opacity hover:opacity-100"
+              className="font-label text-[0.8rem] font-normal text-on-surface/50 transition-all duration-300 hover:text-primary"
             >
               E-Mail
             </a>
@@ -46,19 +46,19 @@ export default function Footer() {
 
           {/* Copyright + legal */}
           <div className="flex flex-col gap-3 md:items-end">
-            <p className="font-body text-sm text-on-surface opacity-60">
+            <p className="font-label text-[0.75rem] font-normal text-on-surface/35">
               &copy; {currentYear} Wojtek Gorecki
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-6">
               <Link
                 href="/impressum"
-                className="font-body text-sm text-on-surface opacity-60 transition-opacity hover:opacity-100"
+                className="font-label text-[0.75rem] font-normal text-on-surface/35 transition-all duration-300 hover:text-on-surface/70"
               >
                 Impressum
               </Link>
               <Link
                 href="/datenschutz"
-                className="font-body text-sm text-on-surface opacity-60 transition-opacity hover:opacity-100"
+                className="font-label text-[0.75rem] font-normal text-on-surface/35 transition-all duration-300 hover:text-on-surface/70"
               >
                 Datenschutz
               </Link>

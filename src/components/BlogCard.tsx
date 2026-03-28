@@ -28,26 +28,27 @@ export default function BlogCard({
     <article className="group">
       <Link href={`/blog/${slug}`} className="block">
         {imageUrl && (
-          <div className="relative aspect-[3/2] overflow-hidden rounded-xl bg-surface-container">
+          <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-surface-container">
             <Image
               src={imageUrl}
               alt={title}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
           </div>
         )}
-        <div className="mt-4">
+        <div className="mt-5">
           {formattedDate && (
-            <p className="font-label text-xs uppercase tracking-widest text-on-surface/50">
+            <p className="font-label text-[0.7rem] font-normal uppercase tracking-[0.25em] text-on-surface/40">
               {formattedDate}
             </p>
           )}
-          <h3 className="mt-1 font-headline text-xl text-on-surface transition-colors group-hover:text-primary">
+          <h3 className="mt-2 font-headline text-[1.25rem] leading-snug text-on-surface transition-colors duration-300 group-hover:text-primary">
             {title}
           </h3>
-          <p className="mt-2 font-body text-sm leading-relaxed text-on-surface/70">
+          <p className="mt-3 font-body text-[0.85rem] font-normal leading-relaxed text-on-surface/55">
             {excerpt}
           </p>
         </div>

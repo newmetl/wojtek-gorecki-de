@@ -23,11 +23,11 @@ const config: Config = {
           tint: "#7c5639",
         },
         primary: {
-          DEFAULT: "#795437",
-          container: "#956c4d",
+          DEFAULT: "#9B4410",
+          container: "#B85A1C",
           fixed: {
-            DEFAULT: "#ffdcc4",
-            dim: "#efbc98",
+            DEFAULT: "#ffd8b4",
+            dim: "#f0b882",
           },
         },
         "on-primary": {
@@ -45,8 +45,8 @@ const config: Config = {
         },
         "on-secondary": "#ffffff",
         tertiary: {
-          DEFAULT: "#71582f",
-          container: "#8b7045",
+          DEFAULT: "#7A4820",
+          container: "#96612E",
         },
         outline: {
           DEFAULT: "#82746c",
@@ -61,15 +61,17 @@ const config: Config = {
         "inverse-primary": "#efbc98",
       },
       fontFamily: {
-        headline: ["Noto Serif", "serif"],
-        body: ["Noto Serif", "serif"],
-        label: ["Work Sans", "sans-serif"],
+        headline: ["var(--font-eb-garamond)", "EB Garamond", "serif"],
+        body: ["var(--font-quicksand)", "Quicksand", "sans-serif"],
+        label: ["var(--font-quicksand)", "Quicksand", "sans-serif"],
       },
       borderRadius: {
-        DEFAULT: "0.125rem",
-        lg: "0.25rem",
-        xl: "0.5rem",
-        full: "0.75rem",
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        "2xl": "1rem",
+        "3xl": "1.5rem",
+        full: "9999px",
       },
     },
   },

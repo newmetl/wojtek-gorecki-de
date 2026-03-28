@@ -12,12 +12,12 @@ export default function KontaktPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-24 md:py-32">
+      <section className="py-28 md:py-36">
         <div className="mx-auto max-w-4xl px-6 md:px-12">
-          <h1 className="font-headline text-4xl text-on-surface md:text-6xl">
+          <h1 className="font-headline text-[2.75rem] text-on-surface md:text-[4.75rem]">
             Schreib mir.
           </h1>
-          <p className="mt-6 max-w-2xl font-body text-lg leading-relaxed text-on-surface/60">
+          <p className="mt-6 max-w-2xl font-body text-lg font-normal leading-relaxed text-on-surface/50">
             Ob du eine Frage hast, einen Termin vereinbaren möchtest oder
             einfach Hallo sagen willst — ich freue mich auf deine Nachricht.
           </p>
@@ -25,19 +25,19 @@ export default function KontaktPage() {
       </section>
 
       {/* Two-column: Contact info + Form */}
-      <section className="pb-24 md:pb-32">
+      <section className="pb-28 md:pb-36">
         <div className="mx-auto max-w-5xl px-6 md:px-12">
           <div className="grid gap-16 md:grid-cols-2">
             {/* Left: Direct contacts */}
-            <div className="space-y-8">
+            <div className="space-y-10">
               <div>
-                <p className="font-label text-xs uppercase tracking-widest text-primary">
+                <p className="font-label text-[0.7rem] font-normal uppercase tracking-[0.25em] text-primary">
                   E-Mail
                 </p>
-                <p className="mt-2 font-body text-base text-on-surface">
+                <p className="mt-3 font-body text-base font-normal text-on-surface">
                   <a
                     href="mailto:kontakt@wojtek-gorecki.de"
-                    className="transition-colors hover:text-primary"
+                    className="transition-colors duration-300 hover:text-primary"
                   >
                     kontakt(at)wojtek-gorecki.de
                   </a>
@@ -45,13 +45,13 @@ export default function KontaktPage() {
               </div>
 
               <div>
-                <p className="font-label text-xs uppercase tracking-widest text-primary">
+                <p className="font-label text-[0.7rem] font-normal uppercase tracking-[0.25em] text-primary">
                   Telefon
                 </p>
-                <p className="mt-2 font-body text-base text-on-surface">
+                <p className="mt-3 font-body text-base font-normal text-on-surface">
                   <a
                     href="tel:+4915XX"
-                    className="transition-colors hover:text-primary"
+                    className="transition-colors duration-300 hover:text-primary"
                   >
                     +49 (0) 15XX – XXX XX XX
                   </a>
@@ -59,15 +59,15 @@ export default function KontaktPage() {
               </div>
 
               <div>
-                <p className="font-label text-xs uppercase tracking-widest text-primary">
+                <p className="font-label text-[0.7rem] font-normal uppercase tracking-[0.25em] text-primary">
                   Telegram
                 </p>
-                <p className="mt-2 font-body text-base text-on-surface">
+                <p className="mt-3 font-body text-base font-normal text-on-surface">
                   <a
                     href="https://t.me/wojtekgorecki"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-colors hover:text-primary"
+                    className="transition-colors duration-300 hover:text-primary"
                   >
                     @wojtekgorecki
                   </a>
@@ -75,15 +75,15 @@ export default function KontaktPage() {
               </div>
 
               <div>
-                <p className="font-label text-xs uppercase tracking-widest text-primary">
+                <p className="font-label text-[0.7rem] font-normal uppercase tracking-[0.25em] text-primary">
                   WhatsApp
                 </p>
-                <p className="mt-2 font-body text-base text-on-surface">
+                <p className="mt-3 font-body text-base font-normal text-on-surface">
                   <a
                     href="https://wa.me/4915XX"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-colors hover:text-primary"
+                    className="transition-colors duration-300 hover:text-primary"
                   >
                     Nachricht senden
                   </a>

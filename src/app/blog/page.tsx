@@ -39,27 +39,28 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
   return (
     <>
-      <section className="py-24 md:py-32">
+      <section className="py-28 md:py-36">
         <div className="mx-auto max-w-5xl px-6 md:px-12">
-          <p className="font-label text-xs uppercase tracking-widest text-primary">
+          <p className="font-label text-[0.7rem] font-normal uppercase tracking-[0.25em] text-primary">
             Blog
           </p>
-          <h1 className="mt-4 font-headline text-4xl text-on-surface md:text-6xl">
+          <h1 className="mt-5 font-headline text-[2.75rem] text-on-surface md:text-[4.75rem]">
             Gedanken &amp; Impulse
           </h1>
 
           {posts.length === 0 ? (
-            <div className="mt-16 text-center">
-              <p className="font-body text-lg text-on-surface/50">
+            <div className="mt-20 text-center">
+              <div className="mx-auto mb-8 h-px w-16 bg-primary/20" />
+              <p className="font-body text-lg font-normal text-on-surface/40">
                 Noch keine Beiträge vorhanden.
               </p>
-              <p className="mt-2 font-body text-sm text-on-surface/40">
+              <p className="mt-3 font-body text-[0.85rem] font-normal text-on-surface/30">
                 Bald erscheinen hier Texte über Stille, Präsenz und das, was ist.
               </p>
             </div>
           ) : (
             <>
-              <div className="mt-16 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-16 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
                 {posts.map((post) => (
                   <BlogCard
                     key={post.id}
@@ -74,22 +75,22 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
               {/* Pagination */}
               {totalPages > 1 && (
-                <nav className="mt-16 flex items-center justify-center gap-4">
+                <nav className="mt-20 flex items-center justify-center gap-4">
                   {currentPage > 1 && (
                     <Link
                       href={`/blog?page=${currentPage - 1}`}
-                      className="rounded-xl bg-surface-container px-5 py-2.5 font-label text-sm text-on-surface transition-colors hover:bg-surface-container-high"
+                      className="inline-flex items-center rounded-full border border-outline-variant/40 px-6 py-2.5 font-label text-[0.8rem] font-normal text-on-surface transition-all duration-300 hover:border-primary/40 hover:text-primary"
                     >
                       &larr; Zurück
                     </Link>
                   )}
-                  <span className="font-label text-sm text-on-surface/50">
+                  <span className="font-label text-[0.8rem] font-normal text-on-surface/35">
                     Seite {currentPage} von {totalPages}
                   </span>
                   {currentPage < totalPages && (
                     <Link
                       href={`/blog?page=${currentPage + 1}`}
-                      className="rounded-xl bg-surface-container px-5 py-2.5 font-label text-sm text-on-surface transition-colors hover:bg-surface-container-high"
+                      className="inline-flex items-center rounded-full border border-outline-variant/40 px-6 py-2.5 font-label text-[0.8rem] font-normal text-on-surface transition-all duration-300 hover:border-primary/40 hover:text-primary"
                     >
                       Weiter &rarr;
                     </Link>
