@@ -10,21 +10,6 @@ export const metadata = {
     "Offene Abende in der Stille. Gemeinsame Begegnung ohne Methode, ohne Programm.",
 };
 
-interface AppointmentWithLocation {
-  id: string;
-  title: string;
-  date: Date;
-  timeStart: string;
-  timeEnd: string;
-  bookingUrl: string | null;
-  description: string | null;
-  location: {
-    id: string;
-    name: string;
-    address: string | null;
-  };
-}
-
 export default async function OffenesTreffenPage() {
   const now = new Date();
 
@@ -36,20 +21,6 @@ export default async function OffenesTreffenPage() {
     include: { location: true },
     orderBy: { date: "asc" },
   });
-
-  // Group appointments by location
-  const grouped = appointments.reduce<
-    Record<string, { location: AppointmentWithLocation["location"]; items: AppointmentWithLocation[] }>
-  >((acc, apt) => {
-    const key = apt.location.id;
-    if (!acc[key]) {
-      acc[key] = { location: apt.location, items: [] };
-    }
-    acc[key].items.push(apt);
-    return acc;
-  }, {});
-
-  const locationGroups = Object.values(grouped);
 
   return (
     <>
@@ -69,18 +40,22 @@ export default async function OffenesTreffenPage() {
           <FadeIn direction="none" delay={350}>
             <div className="mt-10 max-w-2xl space-y-6 font-body text-base font-medium leading-relaxed text-on-surface/60">
               <p>
-                Das Offene Treffen ist ein Raum, in dem nichts erreicht werden
-                muss. Kein Programm, keine Methode — nur die Bereitschaft, ehrlich
-                da zu sein. Mit sich selbst und mit anderen.
+                Ein Raum ohne Agenda, ohne Methode, ohne Ziel, irgendwo
+                anzukommen. Du musst nichts erreichen, nichts verstehen und
+                nichts an dir verändern. Du kannst mit Fragen kommen, mit
+                Zweifel, mit Erschöpfung vom Suchen — oder einfach ohne
+                Anliegen.
               </p>
               <p>
-                Wir sitzen zusammen, teilen Stille und Worte. Was sich zeigt,
-                darf sich zeigen. Es braucht keine Vorerfahrung, keine Anmeldung
-                — nur den Wunsch, einen Abend in Offenheit zu verbringen.
+                Wir richten die Aufmerksamkeit gemeinsam auf das, was bereits
+                ist. Nicht, um etwas zu verstehen — sondern um zu sehen, was
+                bleibt, wenn nichts verstanden werden muss. Manchmal entsteht
+                Stille. Manchmal ein Gespräch. Manchmal nur ein gemeinsames
+                Dasein.
               </p>
               <p>
-                Die Treffen finden regelmäßig an verschiedenen Orten statt und
-                sind auf Spendenbasis zugänglich. Jeder ist willkommen.
+                Du kannst zuhören, dich einbringen oder einfach da sein. Die
+                Teilnahme ist auf Spendenbasis.
               </p>
             </div>
           </FadeIn>
@@ -109,36 +84,24 @@ export default async function OffenesTreffenPage() {
               Kommende Termine
             </h2>
 
-            {locationGroups.length === 0 ? (
+            {appointments.length === 0 ? (
               <p className="mt-8 font-body text-base font-medium text-on-surface/40">
                 Aktuell sind keine Termine geplant. Schau bald wieder vorbei.
               </p>
             ) : (
-              <div className="mt-14 space-y-16">
-                {locationGroups.map((group) => (
-                  <div key={group.location.id}>
-                    <h3 className="font-headline text-xl text-on-surface">
-                      {group.location.name}
-                    </h3>
-                    {group.location.address && (
-                      <p className="mt-1.5 font-label text-[0.8rem] font-medium text-on-surface/40">
-                        {group.location.address}
-                      </p>
-                    )}
-                    <div className="mt-6 space-y-3">
-                      {group.items.map((apt) => (
-                        <AppointmentCard
-                          key={apt.id}
-                          title={apt.title}
-                          date={apt.date}
-                          timeStart={apt.timeStart}
-                          timeEnd={apt.timeEnd}
-                          bookingUrl={apt.bookingUrl}
-                          description={apt.description}
-                        />
-                      ))}
-                    </div>
-                  </div>
+              <div className="mt-14 space-y-4">
+                {appointments.map((apt) => (
+                  <AppointmentCard
+                    key={apt.id}
+                    title={apt.title}
+                    date={apt.date}
+                    timeStart={apt.timeStart}
+                    timeEnd={apt.timeEnd}
+                    locationName={apt.location.name}
+                    locationAddress={apt.location.address ?? undefined}
+                    bookingUrl={apt.bookingUrl}
+                    description={apt.description}
+                  />
                 ))}
               </div>
             )}
@@ -157,28 +120,22 @@ export default async function OffenesTreffenPage() {
               <li className="flex gap-4">
                 <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/60" />
                 <span>
-                  Bitte komm etwa 10 Minuten vor Beginn, damit wir gemeinsam
-                  starten können.
+                  Bitte komm ein paar Minuten vor Beginn, damit wir
+                  gemeinsam und in Ruhe starten können.
                 </span>
               </li>
               <li className="flex gap-4">
                 <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/60" />
                 <span>
-                  Die Teilnahme ist auf Spendenbasis — als Richtwert
-                  empfehle ich 15–20 Euro.
+                  Es braucht keine Vorerfahrung. Komm einfach, wie du bist.
                 </span>
               </li>
               <li className="flex gap-4">
                 <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/60" />
                 <span>
-                  Es braucht keine Vorerfahrung. Komm, wie du bist.
-                </span>
-              </li>
-              <li className="flex gap-4">
-                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/60" />
-                <span>
-                  Bequeme Kleidung ist empfehlenswert. Sitzkissen und Stühle
-                  sind vorhanden.
+                  Alle Treffen — ob online oder vor Ort — finden in einem
+                  geschützten Rahmen statt. Es wird nichts aufgezeichnet
+                  oder veröffentlicht.
                 </span>
               </li>
             </ul>

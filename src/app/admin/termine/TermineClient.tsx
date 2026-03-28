@@ -53,6 +53,30 @@ export default function TermineClient({
     }
   };
 
+  const handleDuplicate = async (apt: Appointment) => {
+    try {
+      const res = await fetch("/api/admin/appointments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: apt.title,
+          locationId: apt.location.id,
+          date: apt.date,
+          timeStart: apt.timeStart,
+          timeEnd: apt.timeEnd,
+          bookingUrl: apt.bookingUrl,
+          description: apt.description,
+          isActive: false,
+        }),
+      });
+      if (res.ok) {
+        router.refresh();
+      }
+    } catch (error) {
+      console.error("Duplicate failed:", error);
+    }
+  };
+
   const tabs: { key: Filter; label: string }[] = [
     { key: "all", label: "Alle" },
     { key: "upcoming", label: "Kommende" },
@@ -156,6 +180,12 @@ export default function TermineClient({
                           >
                             Bearbeiten
                           </Link>
+                          <button
+                            onClick={() => handleDuplicate(apt)}
+                            className="text-xs font-label text-[#795437] hover:underline"
+                          >
+                            Duplizieren
+                          </button>
                           <button
                             onClick={() => setDeleteId(apt.id)}
                             className="text-xs font-label text-red-500 hover:underline"

@@ -79,19 +79,69 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Intro */}
+      {/* Worum es hier geht */}
       <section className="py-28 md:py-36">
-        <FadeIn>
-          <div className="mx-auto max-w-3xl px-6 md:px-12">
-            <div className="mx-auto mb-10 h-px w-16 bg-primary/30" />
-            <p className="text-center font-headline text-[1.65rem] leading-relaxed text-on-surface md:text-[2rem]">
-              Es geht nicht darum, besser zu werden. Es geht darum, ehrlich
-              hinzuschauen. In der Begegnung mit dem, was ist, entsteht ein Raum
-              — offen, still und lebendig.
-            </p>
-            <div className="mx-auto mt-10 h-px w-16 bg-primary/30" />
+        <div className="mx-auto max-w-5xl px-6 md:px-12">
+          <div className="grid items-start gap-16 md:grid-cols-2">
+            <div>
+              <FadeIn>
+                <p className="font-label text-[0.7rem] font-medium uppercase tracking-[0.25em] text-primary">
+                  Worum es hier geht
+                </p>
+                <h2 className="mt-4 font-headline text-[2.25rem] text-on-surface md:text-[3.25rem]">
+                  Erinnern, was bereits ist
+                </h2>
+              </FadeIn>
+              <FadeIn delay={100}>
+                <p className="mt-8 font-body text-base font-medium leading-relaxed text-on-surface/60">
+                  Diese Webseite und die hier angebotene Arbeit dienen nur einem
+                  Zweck: dem Erinnern an das, was immer schon bereits ist. Hier.
+                  Jetzt.
+                </p>
+              </FadeIn>
+              <FadeIn delay={200}>
+                <p className="mt-6 font-body text-base font-medium leading-relaxed text-on-surface/60">
+                  Nicht als etwas, das gefunden werden müsste. Nicht als etwas
+                  Getrenntes. Sondern als das, was der Erfahrung des
+                  gegenwärtigen Augenblicks zugrunde liegt. Das einfache,
+                  unmittelbare Sein.
+                </p>
+              </FadeIn>
+            </div>
+            <FadeIn delay={150}>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container">
+                <Image
+                  src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=800&q=80"
+                  alt="Licht fällt durch Bäume in einen stillen Wald"
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            </FadeIn>
           </div>
-        </FadeIn>
+
+          <div className="mx-auto mt-20 max-w-3xl">
+            <FadeIn>
+              <div className="mx-auto mb-10 h-px w-16 bg-primary/20" />
+              <p className="text-center font-body text-base font-medium leading-relaxed text-on-surface/60 md:text-lg">
+                Auch wenn Optimierung, Heilung oder Selbstverbesserung im Leben
+                von Menschen ihren Platz haben können, wird hier auf etwas
+                verwiesen, das weit darüber hinaus geht. Ein Erkennen jenseits
+                von Reparatur und Entwicklung.
+              </p>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <p className="mt-8 text-center font-body text-base font-medium leading-relaxed text-on-surface/60 md:text-lg">
+                Dieses Erkennen wird oft Erwachen oder Erleuchtung genannt. Doch
+                auch diese Worte sind nur Hinweise. Sie zeigen nicht auf ein Ziel
+                — sondern auf das, was allem Denken, Benennen und Suchen bereits
+                vorausgeht.
+              </p>
+              <div className="mx-auto mt-10 h-px w-16 bg-primary/20" />
+            </FadeIn>
+          </div>
+        </div>
       </section>
 
       {/* Offenes Treffen Teaser */}
@@ -183,13 +233,41 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* PauseBlock */}
-      <FadeIn>
-        <PauseBlock
-          quote="Die größte Offenbarung ist die Stille."
-          author="Laotse"
-        />
-      </FadeIn>
+      {/* Persönliches Zitat */}
+      <section className="bg-surface-container-low py-28 md:py-36">
+        <div className="mx-auto max-w-5xl px-6 md:px-12">
+          <div className="grid items-center gap-12 md:grid-cols-[280px_1fr] md:gap-16">
+            <FadeIn>
+              <div className="mx-auto w-56 md:w-full">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-surface-container">
+                  <Image
+                    src="/images/portrait.jpg"
+                    alt="Wojtek Górecki"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 224px, 280px"
+                  />
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <div>
+                <div className="mb-8 h-px w-12 bg-primary/30" />
+                <blockquote className="font-body text-base font-medium leading-relaxed text-on-surface/70 md:text-lg md:leading-relaxed">
+                  &ldquo;Das, was allgemein hin als Realität bezeichnet wird, ist
+                  bedingungslose Liebe, die als dieses ewige und vollkommene
+                  Jetzt erscheint. Diese All-Einheit ist makellos, immer stimmig
+                  und träumt den Traum, ein von der Welt losgelöstes Individuum
+                  zu sein … bis sie aufwacht.&rdquo;
+                </blockquote>
+                <p className="mt-8 font-label text-[0.7rem] font-medium uppercase tracking-[0.25em] text-on-surface/40">
+                  Wojtek Górecki
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
 
       {/* Newsletter */}
       <section className="py-28 md:py-36">
