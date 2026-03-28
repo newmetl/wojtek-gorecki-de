@@ -15,7 +15,7 @@ export default function Footer() {
             >
               Wojtek Gorecki
             </Link>
-            <p className="mt-3 font-body text-[0.8rem] font-normal text-on-surface/40">
+            <p className="mt-3 font-body text-[0.8rem] font-medium text-on-surface/40">
               Psychologische und spirituelle Beratung
             </p>
           </div>
@@ -24,7 +24,7 @@ export default function Footer() {
           <nav className="flex flex-col gap-3" aria-label="Footer-Navigation">
             <Link
               href="/blog"
-              className="font-label text-[0.8rem] font-normal text-on-surface/50 transition-all duration-300 hover:text-primary"
+              className="font-label text-[0.8rem] font-medium text-on-surface/50 transition-all duration-300 hover:text-primary"
             >
               Blog
             </Link>
@@ -32,13 +32,13 @@ export default function Footer() {
               href="https://www.facebook.com/wojtek.gorecki"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-label text-[0.8rem] font-normal text-on-surface/50 transition-all duration-300 hover:text-primary"
+              className="font-label text-[0.8rem] font-medium text-on-surface/50 transition-all duration-300 hover:text-primary"
             >
               Facebook
             </a>
             <a
               href="mailto:kontakt@wojtek-gorecki.de"
-              className="font-label text-[0.8rem] font-normal text-on-surface/50 transition-all duration-300 hover:text-primary"
+              className="font-label text-[0.8rem] font-medium text-on-surface/50 transition-all duration-300 hover:text-primary"
             >
               E-Mail
             </a>
@@ -46,19 +46,19 @@ export default function Footer() {
 
           {/* Copyright + legal */}
           <div className="flex flex-col gap-3 md:items-end">
-            <p className="font-label text-[0.75rem] font-normal text-on-surface/35">
+            <p className="font-label text-[0.75rem] font-medium text-on-surface/35">
               &copy; {currentYear} Wojtek Gorecki
             </p>
             <div className="flex gap-6">
               <Link
                 href="/impressum"
-                className="font-label text-[0.75rem] font-normal text-on-surface/35 transition-all duration-300 hover:text-on-surface/70"
+                className="font-label text-[0.75rem] font-medium text-on-surface/35 transition-all duration-300 hover:text-on-surface/70"
               >
                 Impressum
               </Link>
               <Link
                 href="/datenschutz"
-                className="font-label text-[0.75rem] font-normal text-on-surface/35 transition-all duration-300 hover:text-on-surface/70"
+                className="font-label text-[0.75rem] font-medium text-on-surface/35 transition-all duration-300 hover:text-on-surface/70"
               >
                 Datenschutz
               </Link>

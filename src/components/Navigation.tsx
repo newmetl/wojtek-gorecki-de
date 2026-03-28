@@ -70,9 +70,9 @@ export default function Navigation() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`relative font-label text-[0.8rem] font-normal tracking-wider transition-all duration-300 ${
+                className={`relative font-label text-[0.8rem] font-medium tracking-wider transition-all duration-300 ${
                   isActive(link.href)
-                    ? "font-normal text-primary"
+                    ? "font-medium text-primary"
                     : "text-on-surface/60 hover:text-on-surface"
                 }`}
               >

@@ -12,7 +12,7 @@ export default function PauseBlock({ quote, author }: PauseBlockProps) {
           &ldquo;{quote}&rdquo;
         </blockquote>
         {author && (
-          <p className="mt-10 font-label text-[0.7rem] font-normal uppercase tracking-[0.25em] text-on-surface/40">
+          <p className="mt-10 font-label text-[0.7rem] font-medium uppercase tracking-[0.25em] text-on-surface/40">
             {author}
           </p>
         )}

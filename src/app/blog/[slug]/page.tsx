@@ -97,14 +97,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Article */}
       <article className="py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 md:px-12">
-          <p className="font-label text-[0.7rem] font-normal uppercase tracking-[0.25em] text-on-surface/40">
+          <p className="font-label text-[0.7rem] font-medium uppercase tracking-[0.25em] text-on-surface/40">
             {formattedDate}
           </p>
           <h1 className="mt-5 font-headline text-[2rem] leading-tight text-on-surface md:text-[3.25rem]">
             {post.title}
           </h1>
 
-          <div className="prose prose-lg prose-stone mt-14 max-w-none font-body prose-headings:font-headline prose-headings:text-on-surface prose-p:font-normal prose-p:text-on-surface/70 prose-p:leading-relaxed prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-blockquote:border-primary/30 prose-blockquote:font-headline prose-blockquote:italic prose-blockquote:text-on-surface/50">
+          <div className="prose prose-lg prose-stone mt-14 max-w-none font-body prose-headings:font-headline prose-headings:text-on-surface prose-p:font-medium prose-p:text-on-surface/70 prose-p:leading-relaxed prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-blockquote:border-primary/30 prose-blockquote:font-headline prose-blockquote:italic prose-blockquote:text-on-surface/50">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {post.content}
             </ReactMarkdown>
@@ -114,7 +114,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="mb-8 h-px w-16 bg-primary/20" />
             <Link
               href="/blog"
-              className="group inline-flex items-center gap-2 font-label text-[0.8rem] font-normal text-primary transition-all duration-300 hover:gap-3"
+              className="group inline-flex items-center gap-2 font-label text-[0.8rem] font-medium text-primary transition-all duration-300 hover:gap-3"
             >
               <span className="transition-transform duration-300 group-hover:-translate-x-0.5">&larr;</span>
               Zurück zur Übersicht

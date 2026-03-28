@@ -41,7 +41,7 @@ export default function ContactForm() {
         <p className="font-headline text-xl text-on-surface">
           Vielen Dank für deine Nachricht.
         </p>
-        <p className="mt-3 font-body text-[0.85rem] font-normal text-on-surface/50">
+        <p className="mt-3 font-body text-[0.85rem] font-medium text-on-surface/50">
           Ich melde mich in Kürze bei dir.
         </p>
       </div>
@@ -53,7 +53,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="name"
-          className="block font-label text-[0.75rem] font-normal tracking-wide text-on-surface/60"
+          className="block font-label text-[0.75rem] font-medium tracking-wide text-on-surface/60"
         >
           Name
         </label>
@@ -63,7 +63,7 @@ export default function ContactForm() {
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="mt-2 w-full rounded-xl border border-outline-variant/30 bg-transparent px-5 py-3.5 font-body text-[0.9rem] font-normal text-on-surface placeholder:text-on-surface/25 transition-all duration-300 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10"
+          className="mt-2 w-full rounded-xl border border-outline-variant/30 bg-transparent px-5 py-3.5 font-body text-[0.9rem] font-medium text-on-surface placeholder:text-on-surface/25 transition-all duration-300 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10"
           placeholder="Dein Name"
         />
       </div>
@@ -71,7 +71,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="email"
-          className="block font-label text-[0.75rem] font-normal tracking-wide text-on-surface/60"
+          className="block font-label text-[0.75rem] font-medium tracking-wide text-on-surface/60"
         >
           E-Mail
         </label>
@@ -81,7 +81,7 @@ export default function ContactForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-2 w-full rounded-xl border border-outline-variant/30 bg-transparent px-5 py-3.5 font-body text-[0.9rem] font-normal text-on-surface placeholder:text-on-surface/25 transition-all duration-300 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10"
+          className="mt-2 w-full rounded-xl border border-outline-variant/30 bg-transparent px-5 py-3.5 font-body text-[0.9rem] font-medium text-on-surface placeholder:text-on-surface/25 transition-all duration-300 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10"
           placeholder="deine@email.de"
         />
       </div>
@@ -89,7 +89,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="block font-label text-[0.75rem] font-normal tracking-wide text-on-surface/60"
+          className="block font-label text-[0.75rem] font-medium tracking-wide text-on-surface/60"
         >
           Nachricht
         </label>
@@ -99,7 +99,7 @@ export default function ContactForm() {
           rows={5}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="mt-2 w-full resize-none rounded-xl border border-outline-variant/30 bg-transparent px-5 py-3.5 font-body text-[0.9rem] font-normal text-on-surface placeholder:text-on-surface/25 transition-all duration-300 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10"
+          className="mt-2 w-full resize-none rounded-xl border border-outline-variant/30 bg-transparent px-5 py-3.5 font-body text-[0.9rem] font-medium text-on-surface placeholder:text-on-surface/25 transition-all duration-300 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10"
           placeholder="Was möchtest du mir mitteilen?"
         />
       </div>
@@ -107,7 +107,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="group relative w-full overflow-hidden rounded-full bg-primary px-6 py-4 font-label text-[0.8rem] font-normal tracking-wide text-on-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 disabled:opacity-50"
+        className="group relative w-full overflow-hidden rounded-full bg-primary px-6 py-4 font-label text-[0.8rem] font-medium tracking-wide text-on-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 disabled:opacity-50"
       >
         <span className="relative z-10">
           {status === "sending" ? "Wird gesendet..." : "Nachricht senden"}
@@ -116,7 +116,7 @@ export default function ContactForm() {
       </button>
 
       {status === "error" && (
-        <p className="text-center font-body text-[0.85rem] font-normal text-error">
+        <p className="text-center font-body text-[0.85rem] font-medium text-error">
           Etwas ist schiefgelaufen. Bitte versuche es erneut.
         </p>
       )}

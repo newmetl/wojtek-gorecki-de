@@ -55,13 +55,13 @@ export default async function OffenesTreffenPage() {
       {/* Header */}
       <section className="py-28 md:py-36">
         <div className="mx-auto max-w-4xl px-6 md:px-12">
-          <p className="font-label text-[0.7rem] font-normal uppercase tracking-[0.25em] text-primary">
+          <p className="font-label text-[0.7rem] font-medium uppercase tracking-[0.25em] text-primary">
             Begegnung in der Stille
           </p>
           <h1 className="mt-5 font-headline text-[2.75rem] text-on-surface md:text-[4.75rem]">
             Offenes Treffen
           </h1>
-          <div className="mt-10 max-w-2xl space-y-6 font-body text-base font-normal leading-relaxed text-on-surface/60">
+          <div className="mt-10 max-w-2xl space-y-6 font-body text-base font-medium leading-relaxed text-on-surface/60">
             <p>
               Das Offene Treffen ist ein Raum, in dem nichts erreicht werden
               muss. Kein Programm, keine Methode — nur die Bereitschaft, ehrlich
@@ -83,8 +83,8 @@ export default async function OffenesTreffenPage() {
       {/* Atmospheric Image */}
       <section className="relative h-[50vh] md:h-[60vh]">
         <Image
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&q=80"
-          alt="Stille Begegnung"
+          src="/images/offenes-treffen.png"
+          alt="Offenes Treffen"
           fill
           className="object-cover"
           sizes="100vw"
@@ -100,7 +100,7 @@ export default async function OffenesTreffenPage() {
           </h2>
 
           {locationGroups.length === 0 ? (
-            <p className="mt-8 font-body text-base font-normal text-on-surface/40">
+            <p className="mt-8 font-body text-base font-medium text-on-surface/40">
               Aktuell sind keine Termine geplant. Schau bald wieder vorbei.
             </p>
           ) : (
@@ -111,7 +111,7 @@ export default async function OffenesTreffenPage() {
                     {group.location.name}
                   </h3>
                   {group.location.address && (
-                    <p className="mt-1.5 font-label text-[0.8rem] font-normal text-on-surface/40">
+                    <p className="mt-1.5 font-label text-[0.8rem] font-medium text-on-surface/40">
                       {group.location.address}
                     </p>
                   )}
@@ -141,7 +141,7 @@ export default async function OffenesTreffenPage() {
           <h2 className="font-headline text-[1.65rem] text-on-surface md:text-[2.25rem]">
             Gut zu wissen
           </h2>
-          <ul className="mt-10 space-y-5 font-body text-base font-normal leading-relaxed text-on-surface/60">
+          <ul className="mt-10 space-y-5 font-body text-base font-medium leading-relaxed text-on-surface/60">
             <li className="flex gap-4">
               <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/60" />
               <span>
@@ -176,19 +176,19 @@ export default async function OffenesTreffenPage() {
       {/* Cross-reference */}
       <section className="py-28 md:py-36">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="font-body text-base font-normal leading-relaxed text-on-surface/50">
+          <p className="font-body text-base font-medium leading-relaxed text-on-surface/50">
             Du wünschst dir einen persönlicheren Rahmen?
           </p>
           <h3 className="mt-4 font-headline text-[1.65rem] text-on-surface md:text-[2.25rem]">
             Begleitgespräch
           </h3>
-          <p className="mt-4 font-body text-base font-normal text-on-surface/50">
+          <p className="mt-4 font-body text-base font-medium text-on-surface/50">
             In einem Einzelgespräch begleite ich dich mit voller
             Aufmerksamkeit — in deinem Tempo, in deinem Raum.
           </p>
           <Link
             href="/begleitgespraech"
-            className="group relative mt-10 inline-flex items-center justify-center overflow-hidden rounded-full bg-primary px-10 py-4 font-label text-[0.8rem] font-normal tracking-wide text-on-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+            className="group relative mt-10 inline-flex items-center justify-center overflow-hidden rounded-full bg-primary px-10 py-4 font-label text-[0.8rem] font-medium tracking-wide text-on-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
           >
             <span className="relative z-10">Mehr erfahren</span>
             <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-container opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

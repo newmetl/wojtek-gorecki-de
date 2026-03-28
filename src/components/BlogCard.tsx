@@ -41,14 +41,14 @@ export default function BlogCard({
         )}
         <div className="mt-5">
           {formattedDate && (
-            <p className="font-label text-[0.7rem] font-normal uppercase tracking-[0.25em] text-on-surface/40">
+            <p className="font-label text-[0.7rem] font-medium uppercase tracking-[0.25em] text-on-surface/40">
               {formattedDate}
             </p>
           )}
           <h3 className="mt-2 font-headline text-[1.25rem] leading-snug text-on-surface transition-colors duration-300 group-hover:text-primary">
             {title}
           </h3>
-          <p className="mt-3 font-body text-[0.85rem] font-normal leading-relaxed text-on-surface/55">
+          <p className="mt-3 font-body text-[0.85rem] font-medium leading-relaxed text-on-surface/55">
             {excerpt}
           </p>
         </div>
