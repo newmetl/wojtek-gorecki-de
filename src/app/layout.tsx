@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Quicksand } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 
 const ebGaramond = EB_Garamond({
   subsets: ["latin", "latin-ext"],
@@ -20,9 +18,9 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  title: "Wojtek Gorecki \u2013 Psychologische und spirituelle Beratung",
+  title: "Wojtek Gorecki – Psychologische und spirituelle Beratung",
   description:
-    "Begleitung auf dem Weg zu innerer Klarheit. Psychologische und spirituelle Beratung in einem Raum der Stille und Pr\u00e4senz.",
+    "Begleitung auf dem Weg zu innerer Klarheit. Psychologische und spirituelle Beratung in einem Raum der Stille und Präsenz.",
 };
 
 export default function RootLayout({
@@ -36,9 +34,7 @@ export default function RootLayout({
       className={`${ebGaramond.variable} ${quicksand.variable}`}
     >
       <body className="bg-surface text-on-surface font-body antialiased">
-        <Navigation />
-        <main className="min-h-screen pt-[72px]">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
