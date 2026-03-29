@@ -17,10 +17,30 @@ const quicksand = Quicksand({
   display: "swap",
 });
 
+const BASE_URL = "https://wojtek-gorecki.de";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: "Wojtek Gorecki – Psychologische und spirituelle Beratung",
   description:
     "Begleitung auf dem Weg zu innerer Klarheit. Psychologische und spirituelle Beratung in einem Raum der Stille und Präsenz.",
+  openGraph: {
+    title: "Wojtek Gorecki – Psychologische und spirituelle Beratung",
+    description:
+      "Begleitung auf dem Weg zu innerer Klarheit. Psychologische und spirituelle Beratung in einem Raum der Stille und Präsenz.",
+    url: BASE_URL,
+    siteName: "Wojtek Gorecki",
+    images: [
+      {
+        url: "/images/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Wojtek Gorecki – Psychologische und spirituelle Beratung",
+      },
+    ],
+    locale: "de_DE",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

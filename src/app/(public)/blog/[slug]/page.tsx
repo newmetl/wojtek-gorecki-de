@@ -32,7 +32,7 @@ export async function generateMetadata({
       description: post.excerpt,
       type: "article",
       ...(post.imageUrl && {
-        images: [{ url: post.imageUrl, width: 1200, height: 630 }],
+        images: [{ url: post.imageUrl, width: 1200, height: 630, alt: post.title }],
       }),
     },
   };
