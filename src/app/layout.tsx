@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { EB_Garamond, Quicksand } from "next/font/google";
 import "./globals.css";
 
@@ -18,6 +18,12 @@ const quicksand = Quicksand({
 });
 
 const BASE_URL = "https://wojtek-gorecki.de";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

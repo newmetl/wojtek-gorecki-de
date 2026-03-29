@@ -48,14 +48,17 @@ export default function Navigation() {
   };
 
   return (
+    <>
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-surface/90 shadow-sm shadow-black/[0.03] backdrop-blur-xl"
-          : "bg-surface/80 backdrop-blur-md"
+      className={`fixed top-0 left-0 right-0 z-[70] transition-all duration-300 ${
+        mobileOpen
+          ? "bg-surface"
+          : scrolled
+            ? "bg-surface/90 shadow-sm shadow-black/[0.03] backdrop-blur-xl"
+            : "bg-surface/80 backdrop-blur-md"
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-8">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 pt-[max(1.25rem,env(safe-area-inset-top))] md:px-8">
         {/* Logo */}
         <Link
           href="/"
@@ -89,7 +92,7 @@ export default function Navigation() {
         <button
           type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="relative flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
           aria-label={mobileOpen ? "Menü schließen" : "Menü öffnen"}
           aria-expanded={mobileOpen}
         >
@@ -111,34 +114,36 @@ export default function Navigation() {
         </button>
       </nav>
 
-      {/* Mobile overlay */}
-      <div
-        className={`fixed inset-0 z-40 bg-surface/98 backdrop-blur-2xl transition-all duration-500 md:hidden ${
-          mobileOpen
-            ? "pointer-events-auto opacity-100"
-            : "pointer-events-none opacity-0"
-        }`}
-      >
-        <nav className="flex h-full flex-col items-center justify-center gap-10">
-          {links.map((link, i) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className={`font-headline text-3xl transition-all duration-500 ${
-                mobileOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-              } ${
-                isActive(link.href)
-                  ? "text-primary"
-                  : "text-on-surface/70 hover:text-primary"
-              }`}
-              style={{ transitionDelay: mobileOpen ? `${i * 60}ms` : "0ms" }}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-      </div>
     </header>
+
+    {/* Mobile overlay — rendered outside header so z-index stacking is independent */}
+    <div
+      className={`fixed inset-0 z-[60] bg-surface transition-all duration-500 md:hidden ${
+        mobileOpen
+          ? "pointer-events-auto opacity-100"
+          : "pointer-events-none opacity-0"
+      }`}
+    >
+      <nav className="flex h-[100dvh] flex-col items-center justify-center gap-5 px-6 pb-10 pt-28">
+        {links.map((link, i) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            onClick={() => setMobileOpen(false)}
+            className={`font-headline text-2xl transition-all duration-500 ${
+              mobileOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+            } ${
+              isActive(link.href)
+                ? "text-primary"
+                : "text-on-surface/70 hover:text-primary"
+            }`}
+            style={{ transitionDelay: mobileOpen ? `${i * 60}ms` : "0ms" }}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+    </div>
+    </>
   );
 }
