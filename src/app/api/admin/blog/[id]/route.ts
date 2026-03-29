@@ -2,9 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getServerSession, authOptions } from "@/lib/auth";
 import slugify from "slugify";
-import { v4 as uuidv4 } from "uuid";
-import fs from "fs";
-import path from "path";
+import { uploadBlogImage, deleteBlogImage } from "@/lib/upload";
 
 export async function PUT(
   request: NextRequest,
@@ -29,22 +27,7 @@ export async function PUT(
 
     let imageUrl = existing.imageUrl;
     if (image_data && image_mime_type) {
-      // Remove old image if exists
-      if (existing.imageUrl) {
-        const oldPath = path.join(process.cwd(), "public", existing.imageUrl);
-        if (fs.existsSync(oldPath)) {
-          fs.unlinkSync(oldPath);
-        }
-      }
-      const ext = image_mime_type.split("/")[1] || "png";
-      const filename = `${uuidv4()}.${ext}`;
-      const uploadDir = path.join(process.cwd(), "public", "uploads", "blog");
-      if (!fs.existsSync(uploadDir)) {
-        fs.mkdirSync(uploadDir, { recursive: true });
-      }
-      const buffer = Buffer.from(image_data, "base64");
-      fs.writeFileSync(path.join(uploadDir, filename), buffer);
-      imageUrl = `/uploads/blog/${filename}`;
+      imageUrl = uploadBlogImage(image_data, image_mime_type, existing.imageUrl);
     }
 
     let finalSlug = existing.slug;
@@ -101,12 +84,8 @@ export async function DELETE(
       return NextResponse.json({ error: "Post not found" }, { status: 404 });
     }
 
-    // Remove image file if exists
     if (post.imageUrl) {
-      const imagePath = path.join(process.cwd(), "public", post.imageUrl);
-      if (fs.existsSync(imagePath)) {
-        fs.unlinkSync(imagePath);
-      }
+      deleteBlogImage(post.imageUrl);
     }
 
     await prisma.blogPost.delete({

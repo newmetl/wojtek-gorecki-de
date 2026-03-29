@@ -3,9 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { rateLimit } from "@/lib/rate-limit";
 import { logAgentAction } from "@/lib/agent-logger";
 import slugify from "slugify";
-import { v4 as uuidv4 } from "uuid";
-import fs from "fs";
-import path from "path";
+import { uploadBlogImage } from "@/lib/upload";
 
 function authenticateAgent(request: NextRequest): boolean {
   const authHeader = request.headers.get("authorization");
@@ -103,15 +101,7 @@ export async function POST(request: NextRequest) {
 
     let imageUrl: string | null = null;
     if (image_data && image_mime_type) {
-      const ext = image_mime_type.split("/")[1] || "png";
-      const filename = `${uuidv4()}.${ext}`;
-      const uploadDir = path.join(process.cwd(), "public", "uploads", "blog");
-      if (!fs.existsSync(uploadDir)) {
-        fs.mkdirSync(uploadDir, { recursive: true });
-      }
-      const buffer = Buffer.from(image_data, "base64");
-      fs.writeFileSync(path.join(uploadDir, filename), buffer);
-      imageUrl = `/uploads/blog/${filename}`;
+      imageUrl = uploadBlogImage(image_data, image_mime_type);
     }
 
     const publishedAt = status === "published" ? new Date() : null;

@@ -40,3 +40,6 @@ prisma/*.db-journal
 
 # logs
 logs/
+
+# data (uploads, sqlite)
+data/
