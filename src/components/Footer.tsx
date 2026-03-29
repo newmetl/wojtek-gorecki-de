@@ -37,7 +37,7 @@ export default function Footer() {
               Facebook
             </a>
             <a
-              href="mailto:kontakt@wojtek-gorecki.de"
+              href="mailto:hallo@wojtek-gorecki.de"
               className="font-label text-[0.8rem] font-medium text-on-surface/50 transition-all duration-300 hover:text-primary"
             >
               E-Mail

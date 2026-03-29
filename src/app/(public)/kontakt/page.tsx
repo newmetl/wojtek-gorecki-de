@@ -42,24 +42,24 @@ export default function KontaktPage() {
                   </p>
                   <p className="mt-3 font-body text-base font-medium text-on-surface">
                     <a
-                      href="mailto:kontakt@wojtek-gorecki.de"
+                      href="mailto:hallo@wojtek-gorecki.de"
                       className="transition-colors duration-300 hover:text-primary"
                     >
-                      kontakt(at)wojtek-gorecki.de
+                      hallo(at)wojtek-gorecki.de
                     </a>
                   </p>
                 </div>
 
                 <div>
                   <p className="font-label text-[0.7rem] font-medium uppercase tracking-[0.25em] text-primary">
-                    Telefon
+                    Mobil
                   </p>
                   <p className="mt-3 font-body text-base font-medium text-on-surface">
                     <a
-                      href="tel:+4915XX"
+                      href="tel:+491632787167"
                       className="transition-colors duration-300 hover:text-primary"
                     >
-                      +49 (0) 15XX – XXX XX XX
+                      +49 (0) 163 2787167
                     </a>
                   </p>
                 </div>
@@ -86,7 +86,7 @@ export default function KontaktPage() {
                   </p>
                   <p className="mt-3 font-body text-base font-medium text-on-surface">
                     <a
-                      href="https://wa.me/4915XX"
+                      href="https://wa.me/491632787167"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="transition-colors duration-300 hover:text-primary"
