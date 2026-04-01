@@ -11,11 +11,13 @@ import FadeIn from "@/components/FadeIn";
 
 export default async function HomePage() {
   const now = new Date();
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
   const appointments = await prisma.appointment.findMany({
     where: {
       isActive: true,
-      date: { gte: now },
+      date: { gte: today },
     },
     include: { location: true },
     orderBy: { date: "asc" },

@@ -3,10 +3,13 @@ import { prisma } from "@/lib/prisma";
 
 export async function GET() {
   try {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
     const appointments = await prisma.appointment.findMany({
       where: {
         isActive: true,
-        date: { gte: new Date() },
+        date: { gte: today },
       },
       include: { location: true },
       orderBy: { date: "asc" },
