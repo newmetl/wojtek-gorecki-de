@@ -10,8 +10,8 @@ const links = [
   { href: "/begleitgespraech", label: "Begleitgespräch" },
   { href: "/ueber-mich", label: "Über mich" },
   { href: "/blog", label: "Blog" },
-  { href: "/kontakt", label: "Kontakt" },
   { href: "/#newsletter", label: "Newsletter" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 export default function Navigation() {
