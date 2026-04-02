@@ -11,6 +11,7 @@ const links = [
   { href: "/ueber-mich", label: "Über mich" },
   { href: "/blog", label: "Blog" },
   { href: "/kontakt", label: "Kontakt" },
+  { href: "/#newsletter", label: "Newsletter" },
 ];
 
 export default function Navigation() {

@@ -274,7 +274,7 @@ export default async function HomePage() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-28 md:py-36">
+      <section id="newsletter" className="py-28 md:py-36">
         <FadeIn>
           <div className="mx-auto max-w-2xl px-6 text-center md:px-12">
             <h2 className="font-headline text-[2.25rem] text-on-surface md:text-[3.25rem]">
