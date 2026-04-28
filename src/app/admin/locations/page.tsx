@@ -7,6 +7,7 @@ interface Location {
   id: string;
   name: string;
   address: string | null;
+  imageUrl: string | null;
 }
 
 export default function LocationsPage() {
@@ -19,6 +20,10 @@ export default function LocationsPage() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [existingImageUrl, setExistingImageUrl] = useState<string | null>(null);
+  const [removeImage, setRemoveImage] = useState(false);
   const [saving, setSaving] = useState(false);
 
   // Delete state
@@ -41,10 +46,18 @@ export default function LocationsPage() {
     fetchLocations();
   }, []);
 
+  const resetImageState = () => {
+    setImageFile(null);
+    setImagePreview(null);
+    setExistingImageUrl(null);
+    setRemoveImage(false);
+  };
+
   const openNewModal = () => {
     setEditingId(null);
     setName("");
     setAddress("");
+    resetImageState();
     setModalOpen(true);
   };
 
@@ -52,7 +65,30 @@ export default function LocationsPage() {
     setEditingId(loc.id);
     setName(loc.name);
     setAddress(loc.address || "");
+    setImageFile(null);
+    setImagePreview(null);
+    setExistingImageUrl(loc.imageUrl);
+    setRemoveImage(false);
     setModalOpen(true);
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setImageFile(file);
+      setRemoveImage(false);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleRemoveImage = () => {
+    setImageFile(null);
+    setImagePreview(null);
+    setRemoveImage(true);
   };
 
   const handleSave = async () => {
@@ -61,6 +97,20 @@ export default function LocationsPage() {
     setError("");
 
     try {
+      let image_data: string | null = null;
+      let image_mime_type: string | null = null;
+
+      if (imageFile) {
+        const buffer = await imageFile.arrayBuffer();
+        image_data = btoa(
+          new Uint8Array(buffer).reduce(
+            (data, byte) => data + String.fromCharCode(byte),
+            ""
+          )
+        );
+        image_mime_type = imageFile.type;
+      }
+
       const url = editingId
         ? `/api/admin/locations/${editingId}`
         : "/api/admin/locations";
@@ -69,7 +119,13 @@ export default function LocationsPage() {
       const res = await fetch(url, {
         method,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, address: address || null }),
+        body: JSON.stringify({
+          name,
+          address: address || null,
+          image_data,
+          image_mime_type,
+          remove_image: editingId ? removeImage : false,
+        }),
       });
 
       if (!res.ok) {
@@ -113,6 +169,12 @@ export default function LocationsPage() {
       setDeleteId(null);
     }
   };
+
+  const shownImage = imagePreview
+    ? imagePreview
+    : !removeImage && existingImageUrl
+      ? existingImageUrl
+      : null;
 
   return (
     <div className="max-w-3xl">
@@ -159,6 +221,9 @@ export default function LocationsPage() {
             <thead>
               <tr className="border-b border-[#e0ddd8] bg-[#faf9f6]">
                 <th className="text-left text-xs font-label font-medium text-[#1a1c1a]/50 uppercase tracking-wider px-4 py-3">
+                  Bild
+                </th>
+                <th className="text-left text-xs font-label font-medium text-[#1a1c1a]/50 uppercase tracking-wider px-4 py-3">
                   Name
                 </th>
                 <th className="text-left text-xs font-label font-medium text-[#1a1c1a]/50 uppercase tracking-wider px-4 py-3">
@@ -175,6 +240,17 @@ export default function LocationsPage() {
                   key={loc.id}
                   className="border-b border-[#e0ddd8] last:border-0 hover:bg-[#faf9f6] transition-colors"
                 >
+                  <td className="px-4 py-3">
+                    {loc.imageUrl ? (
+                      <img
+                        src={loc.imageUrl}
+                        alt={loc.name}
+                        className="h-12 w-16 object-cover rounded-md border border-[#e0ddd8]"
+                      />
+                    ) : (
+                      <div className="h-12 w-16 bg-[#faf9f6] rounded-md border border-[#e0ddd8]" />
+                    )}
+                  </td>
                   <td className="px-4 py-3 text-sm font-label font-medium text-[#1a1c1a]">
                     {loc.name}
                   </td>
@@ -211,7 +287,7 @@ export default function LocationsPage() {
             className="fixed inset-0 bg-black/30"
             onClick={() => setModalOpen(false)}
           />
-          <div className="relative bg-white rounded-xl shadow-xl max-w-md w-full mx-4 p-6">
+          <div className="relative bg-white rounded-xl shadow-xl max-w-md w-full mx-4 p-6 max-h-[90vh] overflow-y-auto">
             <h3 className="font-label font-semibold text-lg text-[#1a1c1a] mb-4">
               {editingId ? "Location bearbeiten" : "Neue Location"}
             </h3>
@@ -238,6 +314,34 @@ export default function LocationsPage() {
                   rows={3}
                   className="w-full px-3 py-2.5 border border-[#e0ddd8] rounded-lg text-sm font-body text-[#1a1c1a] focus:outline-none focus:ring-2 focus:ring-[#795437]/20 focus:border-[#795437] transition-colors resize-y"
                 />
+              </div>
+
+              <div>
+                <label className="block text-sm font-label font-medium text-[#1a1c1a]/70 mb-1.5">
+                  Bild
+                </label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="w-full text-sm font-label text-[#1a1c1a]/70 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border file:border-[#e0ddd8] file:text-sm file:font-label file:bg-[#faf9f6] file:text-[#1a1c1a] hover:file:bg-[#f0efec]"
+                />
+                {shownImage && (
+                  <div className="mt-3">
+                    <img
+                      src={shownImage}
+                      alt="Vorschau"
+                      className="max-h-40 rounded-lg border border-[#e0ddd8]"
+                    />
+                    <button
+                      type="button"
+                      onClick={handleRemoveImage}
+                      className="mt-2 text-xs font-label text-red-500 hover:underline"
+                    >
+                      Bild entfernen
+                    </button>
+                  </div>
+                )}
               </div>
 
               {error && modalOpen && (

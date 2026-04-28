@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getServerSession, authOptions } from "@/lib/auth";
+import { uploadLocationImage } from "@/lib/upload";
 
 export async function GET() {
   try {
@@ -31,7 +32,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { name, address } = body;
+    const { name, address, image_data, image_mime_type } = body;
 
     if (!name) {
       return NextResponse.json(
@@ -40,10 +41,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    let imageUrl: string | null = null;
+    if (image_data && image_mime_type) {
+      imageUrl = uploadLocationImage(image_data, image_mime_type);
+    }
+
     const location = await prisma.location.create({
       data: {
         name,
         address: address || null,
+        imageUrl,
       },
     });
 

@@ -102,6 +102,7 @@ export default async function OffenesTreffenPage() {
                     timeEnd={apt.timeEnd}
                     locationName={apt.location.name}
                     locationAddress={apt.location.address ?? undefined}
+                    locationImageUrl={apt.location.imageUrl}
                     bookingUrl={apt.bookingUrl}
                     description={apt.description}
                   />
