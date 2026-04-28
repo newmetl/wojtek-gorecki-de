@@ -1,0 +1,22 @@
+{
+  "name": "Wojtek Gorecki – Psychologische und spirituelle Beratung",
+  "short_name": "Wojtek Gorecki",
+  "description": "Begleitung auf dem Weg zu innerer Klarheit. Psychologische und spirituelle Beratung in einem Raum der Stille und Präsenz.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf9f6",
+  "theme_color": "#2d3b2e",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}
