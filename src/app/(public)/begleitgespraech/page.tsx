@@ -116,12 +116,10 @@ export default function BegleitgespraechPage() {
 
               <div className="mt-10 text-center">
                 <Link
-                  href="https://calendly.com/wojtek-gorecki/begleitgespraech"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:hallo@wojtek-gorecki.de?subject=Begleitgespr%C3%A4ch%20%E2%80%93%20Terminanfrage"
                   className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-primary px-10 py-4 font-label text-[0.8rem] font-medium tracking-wide text-on-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
                 >
-                  <span className="relative z-10">Termin buchen</span>
+                  <span className="relative z-10">Termin per E-Mail anfragen</span>
                   <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-container opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </Link>
                 <p className="mt-10 font-body text-[0.85rem] font-medium text-on-surface/40">
