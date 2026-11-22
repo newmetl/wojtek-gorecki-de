@@ -47,8 +47,8 @@ export default function UeberMichPage() {
                     schon immer da war.
                   </p>
                   <p>
-                    Heute teile ich diesen Raum mit anderen. In offenen Treffen,
-                    in Einzelgesprächen, in Texten. Nicht weil ich eine Methode
+                    Heute teile ich diesen Raum mit anderen. In Einzelgesprächen
+                    und in Texten. Nicht weil ich eine Methode
                     gefunden habe, sondern weil die Begegnung mit dem, was ist,
                     selbst der Weg ist.
                   </p>

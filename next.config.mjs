@@ -9,6 +9,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/offenes-treffen",
+        destination: "/begleitgespraech",
+        permanent: false,
+      },
+    ];
+  },
   async headers() {
     return [
       {

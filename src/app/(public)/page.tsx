@@ -3,7 +3,6 @@ export const dynamic = "force-dynamic";
 import Link from "next/link";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
-import AppointmentCard from "@/components/AppointmentCard";
 import BlogCard from "@/components/BlogCard";
 import PauseBlock from "@/components/PauseBlock";
 import NewsletterForm from "@/components/NewsletterForm";
@@ -11,18 +10,6 @@ import FadeIn from "@/components/FadeIn";
 
 export default async function HomePage() {
   const now = new Date();
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  const appointments = await prisma.appointment.findMany({
-    where: {
-      isActive: true,
-      date: { gte: today },
-    },
-    include: { location: true },
-    orderBy: { date: "asc" },
-    take: 3,
-  });
 
   const posts = await prisma.blogPost.findMany({
     where: {
@@ -66,17 +53,11 @@ export default async function HomePage() {
           <FadeIn direction="none" delay={650}>
             <div className="mt-14 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/offenes-treffen"
+                href="/begleitgespraech"
                 className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-primary px-9 py-4 font-label text-[0.8rem] font-medium tracking-wide text-on-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
               >
-                <span className="relative z-10">Offenes Treffen entdecken</span>
+                <span className="relative z-10">Begleitgespräch anfragen</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-container opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              </Link>
-              <Link
-                href="/begleitgespraech"
-                className="inline-flex items-center justify-center rounded-full border border-outline-variant/60 bg-transparent px-9 py-4 font-label text-[0.8rem] font-medium tracking-wide text-on-surface transition-all duration-300 hover:border-primary/40 hover:bg-primary/[0.04] hover:text-primary"
-              >
-                Begleitgespräch anfragen
               </Link>
             </div>
           </FadeIn>
@@ -146,53 +127,6 @@ export default async function HomePage() {
             </FadeIn>
           </div>
         </div>
-      </section>
-
-      {/* Offenes Treffen Teaser */}
-      <section className="bg-surface-container-low py-28 md:py-36">
-        <FadeIn>
-          <div className="mx-auto max-w-5xl px-6 md:px-12">
-            <p className="font-label text-[0.7rem] font-medium uppercase tracking-[0.25em] text-primary">
-              Begegnung
-            </p>
-            <h2 className="mt-4 font-headline text-[2.25rem] text-on-surface md:text-[3.25rem]">
-              Offenes Treffen
-            </h2>
-            <p className="mt-6 max-w-2xl font-body text-base font-medium leading-relaxed text-on-surface/60">
-              Ein offener Abend für alle, die den Wunsch nach Stille und
-              aufrichtiger Begegnung teilen. Ohne Methode, ohne Programm — nur
-              die Bereitschaft, da zu sein.
-            </p>
-
-            {appointments.length > 0 && (
-              <div className="mt-14 space-y-4">
-                {appointments.map((apt) => (
-                  <AppointmentCard
-                    key={apt.id}
-                    title={apt.title}
-                    date={apt.date}
-                    timeStart={apt.timeStart}
-                    timeEnd={apt.timeEnd}
-                    locationName={apt.location.name}
-                    locationAddress={apt.location.address ?? undefined}
-                    bookingUrl={apt.bookingUrl}
-                    description={apt.description}
-                  />
-                ))}
-              </div>
-            )}
-
-            <div className="mt-12">
-              <Link
-                href="/offenes-treffen"
-                className="group inline-flex items-center gap-2 font-label text-[0.8rem] font-medium text-primary transition-all duration-300 hover:gap-3"
-              >
-                Alle Termine
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5">&rarr;</span>
-              </Link>
-            </div>
-          </div>
-        </FadeIn>
       </section>
 
       {/* Begleitgespräch Teaser */}
